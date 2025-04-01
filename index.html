@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhiyanshu Anand - Software Developer and AI/ML Engineer</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - Chart.js library
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#">
+        <h1 class="logo">Abhiyanshu Anand</h1>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li>
+            <a href="#portfolio" class="navbar-link" data-nav-link>Project</a>
+          </li>
+
+          <li>
+            <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
+          </li>
+
+          <li>
+            <a href="#certificates" class="navbar-link" data-nav-link>Certificates</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+          <li>
+            <a href="https://drive.google.com/file/d/1Ut-jxxRfucSRtZ-crxioj7kRXu5u7Rfw/view?usp=sharing" class="btn btn-primary" target="_blank">Download CV</a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home" style="background-image: url('./assets/images/hero-bg.jpg'); background-size: cover; background-position: center; position: relative;">
+        <div class="container">
+          <div class="hero-content">
+            <h2 class="hero-title">
+              <span>Building the future with every keystroke</span>
+              <strong>Hi! I'm Abhiyanshu Anand</strong>
+              <span>Software Developer and AI/ML Engineer</span>
+            </h2>
+
+            <p class="hero-text">
+              I'm passionate about creating innovative solutions using cutting-edge technologies in AI/ML and software development.
+            </p>
+
+            <div class="btn-group">
+              <a href="#portfolio" class="btn btn-primary blue">Show my work</a>
+              <a href="#about" class="btn">About Me</a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="./assets/images/hero-banner 1 .png" width="800" height="864" loading="lazy" alt="Abhiyanshu Anand's Photo"
+              class="img-cover" style="width: 400px; height: 400px; object-fit: cover; margin: 0 auto; display: block; border: none; outline: none; border-radius: 50%; background-color: transparent; box-shadow: 0 0 30px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 
+        - #SKILLS
+      -->
+
+      <section class="section skills" id="skills">
+        <div class="container">
+          <p class="section-subtitle">My Skills</p>
+
+          <h2 class="h2 section-title">Some Of My Tech Skills</h2>
+
+          <div class="skills-grid">
+            <div class="skills-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <ion-icon name="brain-outline"></ion-icon>
+                </div>
+                <h3 class="category-title">AI/ML Skills</h3>
+              </div>
+              <div class="skills-charts">
+                <div class="pie-chart">
+                  <div class="chart-container">
+                    <canvas id="aiMlChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <div class="category-header">
+                <div class="category-icon">
+                  <ion-icon name="code-slash-outline"></ion-icon>
+                </div>
+                <h3 class="category-title">Programming Skills</h3>
+              </div>
+              <div class="skills-charts">
+                <div class="pie-chart">
+                  <div class="chart-container">
+                    <canvas id="programmingChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 
+        - #PORTFOLIO
+      -->
+
+      <section class="section portfolio" id="portfolio">
+        <div class="container">
+
+          <p class="section-subtitle">Project</p>
+
+          <h2 class="h2 section-title">My Amazing Works</h2>
+
+          <p class="section-text">
+            I've worked on a variety of projects, from web applications to machine learning models.
+          </p>
+
+          <ul class="portfolio-list">
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-1.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle" style="color: #f5f5f5;">Cancer Detection</p>
+
+                  <h3 class="h3 card-title" style="color: #f5f5f5;">ML Model for Cancer Predication and Detection</h3>
+
+                  <span class="btn-link" style="color: #f5f5f5;">
+                    <span>View Projects</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle" style="color: #f5f5f5;">Stock Market</p>
+
+                  <h3 class="h3 card-title" style="color: #f5f5f5;">Stock Market Prediction using ML</h3>
+
+                  <span class="btn-link" style="color: #f5f5f5;">
+                    <span>View Projects</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-3.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle" style="color: #f5f5f5;">Face Recognition</p>
+
+                  <h3 class="h3 card-title" style="color: #f5f5f5;">Face Recognition using ML</h3>
+
+                  <span class="btn-link" style="color: #f5f5f5;">
+                    <span>View Projects</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-4.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle" style="color: #f5f5f5;">Movie Recommendation</p>
+
+                  <h3 class="h3 card-title" style="color: #f5f5f5;">Movie Recommendation using Web Development</h3>
+
+                  <span class="btn-link" style="color: #f5f5f5;">
+                    <span>View Projects</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/about-banner.jpg" width="800" height="652" loading="lazy" alt="Abhiyanshu Anand's Photo"
+              class="img-cover">
+
+            <img src="./assets/images/absolute-image.jpg" width="800" height="717" loading="lazy" alt="Abhiyanshu Anand's Photo"
+              class="abs-img">
+
+            <div class="abs-icon abs-icon-1">
+              <img src="./assets/images/python.png" alt="Python Logo" style="width: 60px; height: 60px;">
+            </div>
+
+            <div class="abs-icon abs-icon-2">
+              <img src="./assets/images/java.png" alt="Java Logo" style="width: 60px; height: 60px;">
+            </div>
+
+            <div class="abs-icon abs-icon-3">
+              <img src="./assets/images/html-5.png" alt="HTML5 Logo" style="width: 60px; height: 60px;">
+            </div>
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">I'm a Developer</p>
+
+            <h2 class="h2 section-title">I Develop Application that Help People</h2>
+
+            <p class="section-text">
+              I am an enthusiastic and highly motivated individual passionate about Artificial Intelligence (AI) and Machine
+              Learning (ML). I am particularly interested in applying data science, deep learning, and automation techniques
+              to solve complex real-world problems across various industries. My goal is to contribute to groundbreaking
+              projects that leverage AI and ML to create impactful solutions while constantly enhancing my technical skills
+              and knowledge through collaborative work in dynamic environments. I am eager to collaborate with talented
+              teams that are working on cutting-edge technologies and innovations.
+            </p>
+
+            <div class="btn-group">
+              <a href="#portfolio" class="btn btn-primary blue">Show my work <ion-icon name="arrow-forward"></ion-icon></a>
+              <a href="#contact" class="btn btn-primary black">About Me</a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #CERTIFICATES
+      -->
+
+      <section class="section certificates" id="certificates">
+        <div class="container">
+          <p class="section-subtitle">My Certificates</p>
+
+          <h2 class="h2 section-title">Professional Certifications</h2>
+
+          <p class="section-text">
+            Here are my professional certifications and achievements.
+          </p>
+
+          <div class="certificates-container">
+            <div class="certificate-card">
+              <h3 class="certificate-title">Python Programming</h3>
+              <p class="certificate-issuer">IIT Madras</p>
+              <a href="./Certificate/Python IIT-M.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">Machine Learning</h3>
+              <p class="certificate-issuer">IIT Roorkee</p>
+              <a href="./Certificate/IIT-Roorkee AIML.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+            
+            <div class="certificate-card">
+              <h3 class="certificate-title">Java Programming</h3>
+              <p class="certificate-issuer">Coding Ninjas</p>
+              <a href="./Certificate/JAVA Certificate.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">Stock Market AI</h3>
+              <p class="certificate-issuer">Internship</p>
+              <a href="./Certificate/Abhiyanshu Anand - Stock Market Using AI - Certificate.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">Ethical Hacking</h3>
+              <p class="certificate-issuer">Internship</p>
+              <a href="./Certificate/Ethical Hacking Certificate Abhiyanshu Anand (2200911530008).pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">Python Programming</h3>
+              <p class="certificate-issuer">IIT Bombay</p>
+              <a href="./Certificate/Python IIT-B.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">Machine Learning Internship</h3>
+              <p class="certificate-issuer">Internship</p>
+              <a href="./Certificate/Internship ML.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">BS Degree Foundation</h3>
+              <p class="certificate-issuer">IIT Madras</p>
+              <a href="./Certificate/IIT Madras BS Degree Foundation Level.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+
+            <div class="certificate-card">
+              <h3 class="certificate-title">Nestle Internship</h3>
+              <p class="certificate-issuer">Nestle</p>
+              <a href="./Certificate/Nestle.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact">
+        <div class="container">
+
+          <div class="contact-card">
+
+            <p class="card-subtitle">Don't be shy</p>
+
+            <h2 class="h2 section-title">Drop Me a Line</h2>
+
+            <div class="wrapper">
+
+              <form action="" class="contact-form">
+
+                <input type="text" name="name" placeholder="Name" required class="contact-input">
+
+                <input type="email" name="email" placeholder="Email" required class="contact-input">
+
+                <textarea name="message" placeholder="Message" required class="contact-input"></textarea>
+
+                <button type="submit" class="btn-submit">Submit Message</button>
+
+              </form>
+
+              <ul class="contact-list">
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="location"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Address</h3>
+
+                    <address class="contact-item-link">
+                      Noida, Uttar Pradesh, India
+                    </address>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="mail"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Email</h3>
+
+                    <a href="mailto:abhiyanshu1107@gmail.com" class="contact-item-link">abhiyanshu1107@gmail.com</a>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <ion-icon name="call"></ion-icon>
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Phone</h3>
+
+                    <a href="tel:+918318518911" class="contact-item-link">+91 8318518911</a>
+                  </div>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2025 <a href="#" class="copyright-link" style="color: white;">Abhiyanshu Anand</a><br>
+        All Rights Reserved
+      </p>
+
+      <ul class="footer-list" style="display: flex; justify-content: center; gap: 20px; list-style: none; padding: 0;">
+        <li>
+          <a href="#" class="footer-link">Terms & Condition</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Privacy, Policy & License</a>
+        </li>
+
+        <li>
+          <a href="https://github.com/Abhi110704" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+            <img src="./assets/images/github-sign.png" alt="GitHub" style="width: 20px; height: 20px;">
+            <span>GitHub</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/abhiyanshu-anand-617963281" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+            <ion-icon name="logo-linkedin" style="font-size: 1.2em;"></ion-icon>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://leetcode.com/u/Abhiyanshu1107/" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+            <ion-icon name="code-slash" style="font-size: 1.2em;"></ion-icon>
+            <span>LeetCode</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.instagram.com/anshu.anand.1107/?hl=en" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
+            <ion-icon name="logo-instagram" style="font-size: 1.2em;"></ion-icon>
+            <span>Instagram</span>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- 
+    - Skills Charts
+  -->
+  <script>
+    // AI/ML Bar Chart
+    const aiMlCtx = document.getElementById('aiMlChart').getContext('2d');
+    new Chart(aiMlCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Machine Learning', 'Deep Learning', 'Data Science'],
+        datasets: [{
+          label: 'Proficiency Level',
+          data: [75, 75, 70],
+          backgroundColor: ['#4CAF50', '#2196F3', '#FFC107'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: {
+              color: 'rgba(0, 0, 0, 0.1)'
+            },
+            ticks: {
+              color: '#000000',
+              font: {
+              }
+            }
+          },
+          x: {
+            grid: {
+              color: 'rgba(0, 0, 0, 0.1)'
+            },
+            ticks: {
+              color: '#000000',
+              font: {
+              }
+            }
+          }
+        }
+      }
+    });
+
+    // Programming Bar Chart
+    const programmingCtx = document.getElementById('programmingChart').getContext('2d');
+    new Chart(programmingCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Python', 'Java', 'MySQL'],
+        datasets: [{
+          label: 'Proficiency Level',
+          data: [80, 70, 75],
+          backgroundColor: ['#4CAF50', '#2196F3', '#FFC107'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: {
+              color: 'rgba(0, 0, 0, 0.1)'
+            },
+            ticks: {
+              color: '#000000',
+              font: {
+              }
+            }
+          },
+          x: {
+            grid: {
+              color: 'rgba(0, 0, 0, 0.1)'
+            },
+            ticks: {
+              color: '#000000',
+              font: {
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+
+</html>
