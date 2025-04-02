@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Abhiyanshu Anand - Software Developer and AI/ML Engineer Portfolio">
+  <meta name="theme-color" content="#ffffff">
   <title>Abhiyanshu Anand - Software Developer and AI/ML Engineer</title>
 
   <!-- 
@@ -30,6 +32,104 @@
     - Chart.js library
   -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- 
+    - Ion Icons
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <style>
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .hero-content {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+      
+      .hero-image {
+        margin-top: 2rem;
+      }
+      
+      .hero-image img {
+        width: 300px !important;
+        height: 300px !important;
+      }
+      
+      .navbar-list {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .portfolio-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .certificates-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-wrapper {
+        flex-direction: column;
+      }
+
+      .social-icons {
+        margin-right: 1rem !important;
+        gap: 0.5rem !important;
+      }
+
+      .social-icons a {
+        font-size: 1.2rem !important;
+      }
+
+      .header .container {
+        padding: 0 1rem;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .footer-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Ensure icons are visible */
+    ion-icon {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Fix for GitHub Pages */
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -45,13 +145,25 @@
         <h1 class="logo">Abhiyanshu Anand</h1>
       </a>
 
+      <div class="social-icons" style="display: flex; gap: 1.5rem; margin-right: 2rem; align-items: center;">
+        <a href="https://github.com/Abhi110704" target="_blank" rel="noopener noreferrer" style="color: #333; font-size: 1.5rem; display: inline-flex; align-items: center; justify-content: center;">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="https://leetcode.com/u/Abhiyanshu1107/" target="_blank" rel="noopener noreferrer" style="color: #FFA116; font-size: 1.5rem; display: inline-flex; align-items: center; justify-content: center;">
+          <ion-icon name="code-slash"></ion-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/abhiyanshu-anand-617963281" target="_blank" rel="noopener noreferrer" style="color: #0077B5; font-size: 1.5rem; display: inline-flex; align-items: center; justify-content: center;">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+      </div>
+
       <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
         <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
         <ion-icon name="close-outline" class="close-icon"></ion-icon>
       </button>
 
       <nav class="navbar container">
-        <ul class="navbar-list">
+        <ul class="navbar-list" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; align-items: center; padding: 0; margin: 0; list-style: none;">
 
           <li>
             <a href="#home" class="navbar-link" data-nav-link>Home</a>
@@ -333,7 +445,7 @@
             Here are my professional certifications and achievements.
           </p>
 
-          <div class="certificates-container">
+          <div class="certificates-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem 0;">
             <div class="certificate-card">
               <h3 class="certificate-title">Python Programming</h3>
               <p class="certificate-issuer">IIT Madras</p>
@@ -556,12 +668,6 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <!-- 
     - Skills Charts
