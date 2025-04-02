@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+I <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,15 +36,368 @@
   <!-- 
     - Ion Icons
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <style>
+    /* Global styles */
+    :root {
+      --primary-bg: #e6f3ff;
+      --secondary-bg: #f0f8ff;
+      --dark-bg: #1a1a1a;
+      --text-primary: #333333;
+      --text-secondary: #666666;
+      --accent-color: #2b6cb0;
+      --white: #ffffff;
+      --light-gray: #f5f5f5;
+      --border-color: #e0e0e0;
+      --light-blue: #e6f3ff;
+      --medium-blue: #cce6ff;
+    }
+
+    body {
+      background: var(--primary-bg);
+      color: var(--text-primary);
+    }
+
+    .section {
+      background: var(--secondary-bg);
+      padding: 6rem 0;
+    }
+
+    .section-title {
+      color: var(--dark-bg);
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      color: var(--accent-color);
+      font-weight: 600;
+    }
+
+    .section-text {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Hero section update */
+    .hero {
+      background: var(--light-blue);
+    }
+
+    .hero::before {
+      background: rgba(230, 243, 255, 0.9);
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+      color: #333;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(43, 108, 176, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title span {
+      color: #2b6cb0;
+      font-size: 1.8rem;
+    }
+
+    .hero-title strong {
+      color: #1a365d;
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .hero-text {
+      font-size: 1.2rem;
+      color: #4a5568;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-text h3 {
+      color: #2d3748;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Portfolio cards update */
+    .portfolio-card {
+      background: var(--white);
+      border: 1px solid var(--medium-blue);
+    }
+
+    .card-title {
+      color: var(--dark-bg);
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+
+    .card-text {
+      color: var(--text-secondary);
+    }
+
+    /* Skills section update */
+    .skills-category {
+      background: var(--white);
+      border: 1px solid var(--medium-blue);
+    }
+
+    .category-title {
+      color: var(--dark-bg);
+      font-weight: 600;
+    }
+
+    .skill-name {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* About section update */
+    .about-content {
+      background: var(--white);
+      border: 1px solid var(--medium-blue);
+    }
+
+    .about-text {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Certificate cards update */
+    .certificate-card {
+      background: var(--white);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--medium-blue);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+      background: var(--light-blue);
+    }
+
+    .certificate-title {
+      color: var(--dark-bg);
+      font-weight: 600;
+    }
+
+    .certificate-issuer {
+      color: var(--text-secondary);
+    }
+
+    /* Contact section update */
+    .contact-card {
+      background: #1a365d;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2.5rem;
+      border-radius: 15px;
+    }
+
+    .contact-card .card-subtitle {
+      color: #64ffda;
+    }
+
+    .contact-card .section-title {
+      color: #ffffff;
+    }
+
+    .contact-input {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .contact-input:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #64ffda;
+      box-shadow: 0 0 0 2px rgba(100, 255, 218, 0.1);
+    }
+
+    .contact-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-submit {
+      background: #64ffda;
+      color: #1a365d;
+      font-weight: 600;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+    }
+
+    .contact-item-title {
+      color: #64ffda;
+    }
+
+    .contact-item-link {
+      color: #ffffff;
+    }
+
+    /* Footer update */
+    .footer {
+      background: var(--light-blue);
+      color: var(--dark-bg);
+      border-top: 1px solid var(--medium-blue);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .copyright {
+      color: var(--dark-bg);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .footer-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-color);
+    }
+
+    .footer-link img {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-link:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Navigation update */
+    .navbar-link {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+      color: var(--accent-color);
+    }
+
+    /* Button update */
+    .btn {
+      background: var(--light-blue);
+      color: var(--dark-bg);
+      border: 1px solid var(--medium-blue);
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--medium-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--accent-color);
+      color: var(--white);
+      font-weight: 600;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-bg);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-primary.blue {
+      background: var(--accent-color);
+      color: var(--white);
+      border: none;
+    }
+
+    .btn-primary.black {
+      background: var(--dark-bg);
+      color: var(--white);
+      border: none;
+    }
+
+    /* Chart colors update */
+    .chart-container canvas {
+      background: var(--primary-bg);
+    }
+
+    /* Floating icons update */
+    .tech-icon {
+      opacity: 0.3;
+    }
+
     /* Responsive styles */
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
+      .container {
+        max-width: 960px;
+        padding: 0 20px;
+      }
+      
       .hero-content {
+        padding: 2rem;
+      }
+      
+      .portfolio-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .certificates-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      .container {
+        max-width: 720px;
+      }
+      
+      .hero .container {
+        flex-direction: column;
         text-align: center;
-        padding: 2rem 1rem;
       }
       
       .hero-image {
@@ -56,9 +409,60 @@
         height: 300px !important;
       }
       
+      .about .container {
+        flex-direction: column;
+      }
+      
+      .about-banner {
+        margin-bottom: 2rem;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-wrapper {
+        flex-direction: column;
+      }
+      
+      .contact-form {
+        margin-bottom: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        max-width: 540px;
+      }
+      
+      .header .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+      
+      .navbar {
+        width: 100%;
+        display: none;
+      }
+      
+      .navbar.active {
+        display: block;
+      }
+      
       .navbar-list {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      
+      .navbar-list li {
+        margin: 0.5rem 0;
+      }
+      
+      .social-icons {
+        margin: 1rem 0;
+        justify-content: center;
       }
       
       .portfolio-list {
@@ -66,28 +470,25 @@
       }
       
       .certificates-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
       }
       
-      .contact-wrapper {
+      .footer-list {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
-
-      .social-icons {
-        margin-right: 1rem !important;
-        gap: 0.5rem !important;
-      }
-
-      .social-icons a {
-        font-size: 1.2rem !important;
-      }
-
-      .header .container {
-        padding: 0 1rem;
+      
+      .footer-list li {
+        margin: 0.5rem 0;
       }
     }
-    
-    @media screen and (max-width: 480px) {
+
+    @media screen and (max-width: 576px) {
+      .container {
+        padding: 0 15px;
+      }
+      
       .hero-title {
         font-size: 2rem;
       }
@@ -101,32 +502,774 @@
         gap: 1rem;
       }
       
-      .footer-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+      .certificates-container {
+        grid-template-columns: 1fr;
       }
-
+      
+      .contact-list {
+        flex-direction: column;
+      }
+      
+      .contact-item {
+        margin-bottom: 1rem;
+      }
+      
       .logo {
         font-size: 1.5rem;
       }
+      
+      .nav-toggle-btn {
+        display: block;
+      }
     }
 
-    /* Ensure icons are visible */
+    /* Navigation Toggle Button */
+    .nav-toggle-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    /* Icon Styles */
     ion-icon {
       display: inline-block;
       vertical-align: middle;
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
     }
 
-    /* Fix for GitHub Pages */
+    .social-icons ion-icon {
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .contact-icon ion-icon {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .footer-link ion-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Ensure icons are visible */
     .social-icons a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.3s ease;
+      color: var(--text-primary);
     }
 
     .social-icons a:hover {
+      transform: scale(1.1);
+    }
+
+    .contact-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Additional responsive fixes */
+    .hero-content {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .about-content {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .skills-category {
+      margin-bottom: 2rem;
+    }
+
+    .chart-container {
+      height: 300px;
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      height: 300px;
+    }
+
+    .certificate-card {
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .certificate-card .btn {
+      margin: 0 auto;
+      min-width: 200px;
+    }
+
+    .certificate-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .certificate-issuer {
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .contact-form {
+      max-width: 100%;
+    }
+
+    .contact-list {
+      max-width: 100%;
+    }
+
+    .modern-design {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+      perspective: 1000px;
+    }
+
+    .tech-stack {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      z-index: 2;
+    }
+
+    .stack-item {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stack-item:hover {
+      transform: translateX(10px);
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #64ffda;
+    }
+
+    .stack-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+      background: white;
+      border-radius: 8px;
+      padding: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .stack-info h3 {
+      margin: 0;
+      font-size: 16px;
+      color: #ccd6f6;
+    }
+
+    .progress-bar {
+      height: 6px;
+      background: var(--accent-color);
+      border-radius: 3px;
+      margin-top: 5px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background: #64ffda;
+      border-radius: 3px;
+      transition: width 1s ease;
+    }
+
+    .tech-cube {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateX(-20deg) rotateY(45deg);
+      width: 150px;
+      height: 150px;
+      transform-style: preserve-3d;
+      animation: rotate 20s infinite linear;
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      border: 2px solid rgba(100, 255, 218, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #64ffda;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .cube-face:hover {
+      background: rgba(100, 255, 218, 0.1);
+      border-color: #64ffda;
+    }
+
+    @keyframes rotate {
+      0% { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(0); }
+      100% { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(360deg); }
+    }
+
+    /* Add subtle gradient overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at top right, rgba(100, 255, 218, 0.1), transparent 50%),
+                          radial-gradient(circle at bottom left, rgba(100, 255, 218, 0.1), transparent 50%);
+      pointer-events: none;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+
+    .code-block {
+      background: var(--dark-bg);
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1.5rem auto;
+      max-width: 800px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .code-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .code-block pre {
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      color: #e6f1ff;
+    }
+
+    .code-block .keyword {
+      color: #ff79c6;
+    }
+
+    .code-block .function {
+      color: #50fa7b;
+    }
+
+    .code-block .property {
+      color: #8be9fd;
+    }
+
+    .code-block .string {
+      color: #f1fa8c;
+    }
+
+    @media screen and (max-width: 768px) {
+      .code-block {
+        margin: 1rem;
+        padding: 1rem;
+      }
+
+      .code-block pre {
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Hero section styles */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 0;
+      background-image: url('./assets/images/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 600px;
+      color: #fff;
+      background: rgba(10, 25, 47, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-title span {
+      color: #64ffda;
+      font-size: 1.8rem;
+    }
+
+    .hero-title strong {
+      color: #ccd6f6;
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .hero-text {
+      font-size: 1.2rem;
+      color: #8892b0;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      background: #ffffff;
+      color: #2b6cb0;
+      border: 1px solid #2b6cb0;
+    }
+
+    .btn:hover {
+      background: #2b6cb0;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(43, 108, 176, 0.3);
+    }
+
+    .btn-primary {
+      background: #2b6cb0;
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: #1a365d;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
+    }
+
+    .btn-primary.blue {
+      background: var(--accent-color);
+      color: var(--white);
+      border: none;
+    }
+
+    .btn-primary.black {
+      background: var(--dark-bg);
+      color: var(--white);
+      border: none;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 500px;
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 3px solid rgba(100, 255, 218, 0.3);
+      border-radius: 50%;
+      animation: rotate 10s linear infinite;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border: 2px solid rgba(100, 255, 218, 0.2);
+      border-radius: 50%;
+    }
+
+    .hero-image img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      margin: 0 auto;
+      display: block;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      border: 5px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.02);
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 1200px) {
+      .hero .container {
+        padding: 0 1.5rem;
+        gap: 2rem;
+      }
+
+      .hero-title strong {
+        font-size: 3rem;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      .hero {
+        padding: 4rem 0;
+      }
+
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 100%;
+      }
+
+      .hero-image {
+        max-width: 100%;
+        margin-top: 2rem;
+      }
+
+      .btn-group {
+        justify-content: center;
+      }
+
+      .hero-title {
+        align-items: center;
+      }
+
+      .hero-title strong {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .hero {
+        padding: 3rem 0;
+      }
+
+      .hero-title strong {
+        font-size: 2rem;
+      }
+
+      .hero-title span {
+        font-size: 1.5rem;
+      }
+
+      .hero-text {
+        font-size: 1rem;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .hero .container {
+        padding: 0 1rem;
+      }
+
+      .hero-title strong {
+        font-size: 1.8rem;
+      }
+
+      .hero-title span {
+        font-size: 1.2rem;
+      }
+
+      .hero-image img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    /* Floating Tech Icons */
+    .floating-icons {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .tech-icon {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      opacity: 0.15;
+      animation: float 20s infinite linear;
+    }
+
+    .tech-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .tech-icon.python {
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+
+    .tech-icon.html {
+      top: 20%;
+      right: 10%;
+      animation-delay: -5s;
+    }
+
+    .tech-icon.java {
+      bottom: 15%;
+      left: 15%;
+      animation-delay: -10s;
+    }
+
+    .tech-icon.ml {
+      bottom: 25%;
+      right: 5%;
+      animation-delay: -15s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(100px, 50px) rotate(90deg);
+      }
+      50% {
+        transform: translate(50px, 100px) rotate(180deg);
+      }
+      75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(360deg);
+      }
+    }
+
+    /* Ensure content stays above floating icons */
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Add more floating icons for different sections */
+    .section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section .floating-icons {
+      position: absolute;
+      height: 100%;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 768px) {
+      .tech-icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .tech-icon {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    /* Header styles */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--light-blue);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header.active {
+      background: var(--light-blue);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--dark-bg);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-link {
+      color: var(--dark-bg);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+      color: var(--accent-color);
+    }
+
+    .nav-toggle-btn {
+      color: var(--dark-bg);
+    }
+
+    .social-icons a {
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+    }
+
+    /* Update button styles for header */
+    .header .btn-primary {
+      background: var(--accent-color);
+      color: var(--white);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .header .btn-primary:hover {
+      background: var(--dark-bg);
+      color: var(--white);
+    }
+
+    /* Remove old back-to-top styles */
+    .back-to-top {
+      display: none;
+    }
+
+    /* Update social icons in header */
+    .social-icons {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons img {
+      width: 28px;
+      height: 28px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
       transform: scale(1.1);
     }
   </style>
@@ -146,14 +1289,14 @@
       </a>
 
       <div class="social-icons" style="display: flex; gap: 1.5rem; margin-right: 2rem; align-items: center;">
-        <a href="https://github.com/Abhi110704" target="_blank" rel="noopener noreferrer" style="color: #333; font-size: 1.5rem; display: inline-flex; align-items: center; justify-content: center;">
-          <ion-icon name="logo-github"></ion-icon>
+        <a href="https://github.com/Abhi110704" target="_blank" rel="noopener noreferrer" style="color: #333;">
+          <img src="./assets/images/github-sign.png" alt="GitHub" style="width: 28px; height: 28px;">
         </a>
-        <a href="https://leetcode.com/u/Abhiyanshu1107/" target="_blank" rel="noopener noreferrer" style="color: #FFA116; font-size: 1.5rem; display: inline-flex; align-items: center; justify-content: center;">
-          <ion-icon name="code-slash"></ion-icon>
+        <a href="https://leetcode.com/u/Abhiyanshu1107/" target="_blank" rel="noopener noreferrer" style="color: #FFA116;">
+          <img src="./assets/images/leetcode.svg" alt="LeetCode" style="width: 28px; height: 28px;">
         </a>
-        <a href="https://www.linkedin.com/in/abhiyanshu-anand-617963281" target="_blank" rel="noopener noreferrer" style="color: #0077B5; font-size: 1.5rem; display: inline-flex; align-items: center; justify-content: center;">
-          <ion-icon name="logo-linkedin"></ion-icon>
+        <a href="https://www.linkedin.com/in/abhiyanshu-anand-617963281" target="_blank" rel="noopener noreferrer" style="color: #0077B5;">
+          <img src="./assets/images/linkedin.png" alt="LinkedIn" style="width: 28px; height: 28px;">
         </a>
       </div>
 
@@ -199,6 +1342,18 @@
     </div>
   </header>
 
+  <!-- Add floating icons container -->
+  <div class="floating-icons">
+    <div class="tech-icon python">
+      <img src="./assets/images/python.png" alt="Python">
+    </div>
+    <div class="tech-icon html">
+      <img src="./assets/images/html-5.png" alt="HTML5">
+    </div>
+    <div class="tech-icon java">
+      <img src="./assets/images/java.png" alt="Java">
+    </div>
+  </div>
 
   <main>
     <article>
@@ -207,7 +1362,15 @@
         - #HERO
       -->
 
-      <section class="hero" id="home" style="background-image: url('./assets/images/hero-bg.jpg'); background-size: cover; background-position: center; position: relative;">
+      <section class="hero" id="home">
+        <div class="floating-icons">
+          <div class="tech-icon python">
+            <img src="./assets/images/python.png" alt="Python">
+          </div>
+          <div class="tech-icon html">
+            <img src="./assets/images/html-5.png" alt="HTML5">
+          </div>
+        </div>
         <div class="container">
           <div class="hero-content">
             <h2 class="hero-title">
@@ -217,7 +1380,7 @@
             </h2>
 
             <p class="hero-text">
-              I'm passionate about creating innovative solutions using cutting-edge technologies in AI/ML and software development.
+              <h3>I'm passionate about creating innovative solutions using cutting-edge technologies in AI/ML and software development.</h3>
             </p>
 
             <div class="btn-group">
@@ -227,8 +1390,7 @@
           </div>
 
           <div class="hero-image">
-            <img src="./assets/images/hero-banner 1 .png" width="800" height="864" loading="lazy" alt="Abhiyanshu Anand's Photo"
-              class="img-cover" style="width: 400px; height: 400px; object-fit: cover; margin: 0 auto; display: block; border: none; outline: none; border-radius: 50%; background-color: transparent; box-shadow: 0 0 30px rgba(0,0,0,0.1);">
+            <img src="./assets/images/hero-banner 1 .png" width="800" height="864" loading="lazy" alt="Abhiyanshu Anand's Photo" class="img-cover">
           </div>
         </div>
       </section>
@@ -239,6 +1401,11 @@
       -->
 
       <section class="section skills" id="skills">
+        <div class="floating-icons">
+          <div class="tech-icon java">
+            <img src="./assets/images/java.png" alt="Java">
+          </div>
+        </div>
         <div class="container">
           <p class="section-subtitle">My Skills</p>
 
@@ -286,6 +1453,14 @@
       -->
 
       <section class="section portfolio" id="portfolio">
+        <div class="floating-icons">
+          <div class="tech-icon python">
+            <img src="./assets/images/python.png" alt="Python">
+          </div>
+          <div class="tech-icon html">
+            <img src="./assets/images/html-5.png" alt="HTML5">
+          </div>
+        </div>
         <div class="container">
 
           <p class="section-subtitle">Project</p>
@@ -381,6 +1556,11 @@
       -->
 
       <section class="section about" id="about">
+        <div class="floating-icons">
+          <div class="tech-icon java">
+            <img src="./assets/images/java.png" alt="Java">
+          </div>
+        </div>
         <div class="container">
 
           <figure class="about-banner">
@@ -388,8 +1568,6 @@
             <img src="./assets/images/about-banner.jpg" width="800" height="652" loading="lazy" alt="Abhiyanshu Anand's Photo"
               class="img-cover">
 
-            <img src="./assets/images/absolute-image.jpg" width="800" height="717" loading="lazy" alt="Abhiyanshu Anand's Photo"
-              class="abs-img">
 
             <div class="abs-icon abs-icon-1">
               <img src="./assets/images/python.png" alt="Python Logo" style="width: 60px; height: 60px;">
@@ -539,7 +1717,7 @@
                 <li class="contact-item">
 
                   <div class="contact-icon">
-                    <ion-icon name="location"></ion-icon>
+                    <img src="./assets/images/address.png" alt="Address" style="width: 24px; height: 24px;">
                   </div>
 
                   <div>
@@ -555,7 +1733,7 @@
                 <li class="contact-item">
 
                   <div class="contact-icon">
-                    <ion-icon name="mail"></ion-icon>
+                    <img src="./assets/images/email.png" alt="Email" style="width: 24px; height: 24px;">
                   </div>
 
                   <div>
@@ -569,7 +1747,7 @@
                 <li class="contact-item">
 
                   <div class="contact-icon">
-                    <ion-icon name="call"></ion-icon>
+                    <img src="./assets/images/phone-call.png" alt="Phone" style="width: 24px; height: 24px;">
                   </div>
 
                   <div>
@@ -605,7 +1783,7 @@
     <div class="container">
 
       <p class="copyright">
-        &copy; 2025 <a href="#" class="copyright-link" style="color: white;">Abhiyanshu Anand</a><br>
+        &copy; 2025 <a href="#" class="copyright-link" style="color: var(--dark-bg);">Abhiyanshu Anand</a><br>
         All Rights Reserved
       </p>
 
@@ -627,21 +1805,21 @@
 
         <li>
           <a href="https://www.linkedin.com/in/abhiyanshu-anand-617963281" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
-            <ion-icon name="logo-linkedin" style="font-size: 1.2em;"></ion-icon>
+            <img src="./assets/images/linkedin.png" alt="LinkedIn" style="width: 20px; height: 20px;">
             <span>LinkedIn</span>
           </a>
         </li>
 
         <li>
           <a href="https://leetcode.com/u/Abhiyanshu1107/" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
-            <ion-icon name="code-slash" style="font-size: 1.2em;"></ion-icon>
+            <img src="./assets/images/leetcode.svg" alt="LeetCode" style="width: 20px; height: 20px;">
             <span>LeetCode</span>
           </a>
         </li>
 
         <li>
           <a href="https://www.instagram.com/anshu.anand.1107/?hl=en" class="footer-link" target="_blank" style="display: flex; align-items: center; gap: 5px;">
-            <ion-icon name="logo-instagram" style="font-size: 1.2em;"></ion-icon>
+            <img src="./assets/images/instagram.png" alt="Instagram" style="width: 20px; height: 20px;">
             <span>Instagram</span>
           </a>
         </li>
@@ -655,32 +1833,38 @@
 
 
   <!-- 
-    - #BACK TO TOP
-  -->
-
-  <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
-
-
-
-
-
-  <!-- 
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
 
   <!-- 
+    - Header Scroll Effect
+  -->
+  <script>
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.style.background = '#ffffff';
+        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+      } else {
+        header.style.background = 'transparent';
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+  <!-- 
     - Skills Charts
   -->
   <script>
-    // AI/ML Bar Chart
+    // AI/ML Score Chart
     const aiMlCtx = document.getElementById('aiMlChart').getContext('2d');
     new Chart(aiMlCtx, {
-      type: 'bar',
+      type: 'doughnut',
       data: {
         labels: ['Machine Learning', 'Deep Learning', 'Data Science'],
         datasets: [{
-          label: 'Proficiency Level',
           data: [75, 75, 70],
           backgroundColor: ['#4CAF50', '#2196F3', '#FFC107'],
           borderWidth: 1
@@ -691,44 +1875,33 @@
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100,
-            grid: {
-              color: 'rgba(0, 0, 0, 0.1)'
-            },
-            ticks: {
+            position: 'bottom',
+            labels: {
               color: '#000000',
               font: {
+                size: 14
               }
             }
           },
-          x: {
-            grid: {
-              color: 'rgba(0, 0, 0, 0.1)'
-            },
-            ticks: {
-              color: '#000000',
-              font: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${context.raw}%`;
               }
             }
           }
-        }
+        },
+        cutout: '70%'
       }
     });
 
-    // Programming Bar Chart
+    // Programming Score Chart
     const programmingCtx = document.getElementById('programmingChart').getContext('2d');
     new Chart(programmingCtx, {
-      type: 'bar',
+      type: 'doughnut',
       data: {
         labels: ['Python', 'Java', 'MySQL'],
         datasets: [{
-          label: 'Proficiency Level',
           data: [80, 70, 75],
           backgroundColor: ['#4CAF50', '#2196F3', '#FFC107'],
           borderWidth: 1
@@ -739,33 +1912,23 @@
         maintainAspectRatio: false,
         plugins: {
           legend: {
-            display: false
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100,
-            grid: {
-              color: 'rgba(0, 0, 0, 0.1)'
-            },
-            ticks: {
+            position: 'bottom',
+            labels: {
               color: '#000000',
               font: {
+                size: 14
               }
             }
           },
-          x: {
-            grid: {
-              color: 'rgba(0, 0, 0, 0.1)'
-            },
-            ticks: {
-              color: '#000000',
-              font: {
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.label}: ${context.raw}%`;
               }
             }
           }
-        }
+        },
+        cutout: '70%'
       }
     });
   </script>
