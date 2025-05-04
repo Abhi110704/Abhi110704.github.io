@@ -33,6 +33,8 @@ I am an enthusiastic and highly motivated individual passionate about Artificial
 - Machine Learning Internship – Internship
 - BS Degree Foundation – IIT Madras
 - Nestle Internship – Nestle
+- Deloitte Australia - Data Analytics Job Simulation
+- Tata Group - Cybersecurity Analyst Job Simulation
 
 ---
 
