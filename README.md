@@ -35,6 +35,7 @@ I am an enthusiastic and highly motivated individual passionate about Artificial
 - Nestle Internship – Nestle
 - Deloitte Australia - Data Analytics Job Simulation
 - Tata Group - Cybersecurity Analyst Job Simulation
+- JPMORGAN CHASE & CO. - Software Engineering Job Simulation
 
 ---
 
