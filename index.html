@@ -29,10 +29,7 @@ I <!DOCTYPE html>
     href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
     rel="stylesheet">
 
-  <!-- 
-    - Chart.js library
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
   <!-- 
     - Ion Icons
@@ -163,6 +160,17 @@ I <!DOCTYPE html>
       font-weight: 500;
     }
 
+    .skill-item {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      background: var(--medium-blue) !important;
+    }
+
     /* About section update */
     .about-content {
       background: var(--white);
@@ -175,14 +183,20 @@ I <!DOCTYPE html>
     }
 
     /* Certificate cards update */
-    .certificate-card {
+    .certificate-card,
+    .education-card,
+    .experience-card,
+    .achievement-card {
       background: var(--white);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--medium-blue);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .certificate-card:hover {
+    .certificate-card:hover,
+    .education-card:hover,
+    .experience-card:hover,
+    .achievement-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
       background: var(--light-blue);
@@ -470,8 +484,15 @@ I <!DOCTYPE html>
         grid-template-columns: 1fr;
       }
       
-      .certificates-container {
-        grid-template-columns: repeat(2, 1fr);
+      .certificates-container,
+      .education-container,
+      .experience-container,
+      .achievements-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
       
       .footer-list {
@@ -1318,7 +1339,15 @@ I <!DOCTYPE html>
           </li>
 
           <li>
-            <a href="#portfolio" class="navbar-link" data-nav-link>Project</a>
+            <a href="#education" class="navbar-link" data-nav-link>Education</a>
+          </li>
+
+          <li>
+            <a href="#experience" class="navbar-link" data-nav-link>Experience</a>
+          </li>
+
+          <li>
+            <a href="#portfolio" class="navbar-link" data-nav-link>Projects</a>
           </li>
 
           <li>
@@ -1330,11 +1359,15 @@ I <!DOCTYPE html>
           </li>
 
           <li>
+            <a href="#achievements" class="navbar-link" data-nav-link>Achievements</a>
+          </li>
+
+          <li>
             <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
           </li>
 
           <li>
-            <a href="https://drive.google.com/file/d/1Z6Fe-7MYl0LfIVRYfxb7fYjZ_VJM5GiQ/view?usp=sharing" class="btn btn-primary" target="_blank">Download CV</a>
+            <a href="./Abhiyanshu_Anand_Resume.pdf" class="btn btn-primary" target="_blank">Download CV</a>
           </li>
 
         </ul>
@@ -1412,35 +1445,154 @@ I <!DOCTYPE html>
 
           <h2 class="h2 section-title">Some Of My Tech Skills</h2>
 
-          <div class="skills-grid">
-            <div class="skills-category">
-              <div class="category-header">
-                <div class="category-icon">
-                  <ion-icon name="brain-outline"></ion-icon>
+          <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="skills-category" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="category-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <div class="category-icon" style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="code-slash-outline" style="font-size: 1.5rem; color: var(--white);"></ion-icon>
                 </div>
-                <h3 class="category-title">AI/ML Skills</h3>
+                <h3 class="category-title" style="color: var(--dark-bg); font-weight: 600;">Programming Languages</h3>
               </div>
-              <div class="skills-charts">
-                <div class="pie-chart">
-                  <div class="chart-container">
-                    <canvas id="aiMlChart"></canvas>
-                  </div>
+              <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-python" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Python</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-javascript" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">JavaScript</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-html5" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">HTML</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-css3" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">CSS</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="code-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">SQL</span>
                 </div>
               </div>
             </div>
 
-            <div class="skills-category">
-              <div class="category-header">
-                <div class="category-icon">
-                  <ion-icon name="code-slash-outline"></ion-icon>
+            <div class="skills-category" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="category-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <div class="category-icon" style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="layers-outline" style="font-size: 1.5rem; color: var(--white);"></ion-icon>
                 </div>
-                <h3 class="category-title">Programming Skills</h3>
+                <h3 class="category-title" style="color: var(--dark-bg); font-weight: 600;">Frameworks & Libraries</h3>
               </div>
-              <div class="skills-charts">
-                <div class="pie-chart">
-                  <div class="chart-container">
-                    <canvas id="programmingChart"></canvas>
-                  </div>
+              <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-react" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">React.js</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-nodejs" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Node.js</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="flask-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Django</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="flask-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Flask</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="analytics-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Streamlit</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-category" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="category-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <div class="category-icon" style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="library-outline" style="font-size: 1.5rem; color: var(--white);"></ion-icon>
+                </div>
+                <h3 class="category-title" style="color: var(--dark-bg); font-weight: 600;">AI/ML Libraries</h3>
+              </div>
+              <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="analytics-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">TensorFlow</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="eye-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">OpenCV</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="stats-chart-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Pandas</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="analytics-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Scikit-learn</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="eye-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">YOLOv8</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-category" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="category-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <div class="category-icon" style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="construct-outline" style="font-size: 1.5rem; color: var(--white);"></ion-icon>
+                </div>
+                <h3 class="category-title" style="color: var(--dark-bg); font-weight: 600;">Tools & Platforms</h3>
+              </div>
+              <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="logo-github" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">GitHub</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="cloud-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">GCP</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="cube-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Docker</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="code-slash-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">VS Code</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="analytics-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">Jupyter</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-category" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+              <div class="category-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <div class="category-icon" style="width: 50px; height: 50px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="server-outline" style="font-size: 1.5rem; color: var(--white);"></ion-icon>
+                </div>
+                <h3 class="category-title" style="color: var(--dark-bg); font-weight: 600;">Databases</h3>
+              </div>
+              <div class="skills-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="server-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">MySQL</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="server-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">PostgreSQL</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="server-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">MongoDB</span>
+                </div>
+                <div class="skill-item" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--light-blue); border-radius: 8px;">
+                  <ion-icon name="server-outline" style="color: var(--accent-color);"></ion-icon>
+                  <span class="skill-name" style="color: var(--dark-bg); font-weight: 500;">SQLite</span>
                 </div>
               </div>
             </div>
@@ -1449,107 +1601,97 @@ I <!DOCTYPE html>
       </section>
 
 
-      <!-- 
-        - #PORTFOLIO
-      -->
+<!-- 
+  - #PORTFOLIO
+-->
+<section class="section portfolio" id="portfolio" style="padding:50px 20px; font-family:Poppins, sans-serif; color:#111;">
+  <div class="container" style="max-width:1200px; margin:auto; text-align:center;">
 
-      <section class="section portfolio" id="portfolio">
-        <div class="floating-icons">
-          <div class="tech-icon python">
-            <img src="./assets/images/python.png" alt="Python">
-          </div>
-          <div class="tech-icon html">
-            <img src="./assets/images/html-5.png" alt="HTML5">
-          </div>
-        </div>
-        <div class="container">
+    <p class="section-subtitle" style="color:#1522b7; font-size:18px; margin-bottom:10px;">Projects</p>
+    <h2 class="h2 section-title" style="font-size:32px; font-weight:700; margin-bottom:30px; border-bottom:2px solid #3f51b5; display:inline-block; padding-bottom:5px;">
+      My Amazing Works
+    </h2>
 
-          <p class="section-subtitle">Project</p>
+    <div class="project-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px;">
 
-          <h2 class="h2 section-title">My Amazing Works</h2>
+      <!-- IntelliTraffic -->
+      <div class="project-card" style="border:1px solid #ddd; border-radius:14px; padding:25px; text-align:left; background:#fff; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:12px;">IntelliTraffic – YOLOv8 Smart Signal Controller</h3>
+        <p style="font-size:15px; color:#444; line-height:1.6; margin-bottom:15px;">
+          An AI-powered smart traffic signal system using YOLOv8 to optimize traffic flow dynamically.
+        </p>
+        <a href="https://github.com/Abhi110704" target="_blank" style="display:inline-flex; align-items:center; color:#3f51b5; text-decoration:none; font-weight:500; font-size:14px;">
+          <ion-icon name="logo-github" style="margin-right:6px;"></ion-icon> View on GitHub
+        </a>
+      </div>
 
-          <p class="section-text">
-            I've worked on a variety of projects, from web applications to machine learning models.
-          </p>
+      <!-- Stock Predictor -->
+      <div class="project-card" style="border:1px solid #ddd; border-radius:14px; padding:25px; text-align:left; background:#fff; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:12px;">Stock Predictor – LSTM with RSI/MACD</h3>
+        <p style="font-size:15px; color:#444; line-height:1.6; margin-bottom:15px;">
+          A stock market prediction model using LSTMs and technical indicators for trend forecasting.
+        </p>
+        <a href="https://github.com/Abhi110704" target="_blank" style="display:inline-flex; align-items:center; color:#3f51b5; text-decoration:none; font-weight:500; font-size:14px;">
+          <ion-icon name="logo-github" style="margin-right:6px;"></ion-icon> View on GitHub
+        </a>
+      </div>
 
-          <ul class="portfolio-list">
+      <!-- Performance Predictor -->
+      <div class="project-card" style="border:1px solid #ddd; border-radius:14px; padding:25px; text-align:left; background:#fff; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:12px;">Performance Predictor – SVM with SMOTE</h3>
+        <p style="font-size:15px; color:#444; line-height:1.6; margin-bottom:15px;">
+          Employee performance prediction using SVM classifiers with SMOTE for balanced datasets.
+        </p>
+        <a href="https://github.com/Abhi110704" target="_blank" style="display:inline-flex; align-items:center; color:#3f51b5; text-decoration:none; font-weight:500; font-size:14px;">
+          <ion-icon name="logo-github" style="margin-right:6px;"></ion-icon> View on GitHub
+        </a>
+      </div>
 
-            <li>
-              <a href="https://github.com/Abhi110704/Internship/tree/main/PRJ%20Cancer%20Prediction" class="portfolio-card" style="background-image: url('./assets/images/portfolio-1.jpg')" target="_blank">
-                <div class="card-content">
+      <!-- Face Attendance -->
+      <div class="project-card" style="border:1px solid #ddd; border-radius:14px; padding:25px; text-align:left; background:#fff; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:12px;">Face Attendance – OpenCV Recognition</h3>
+        <p style="font-size:15px; color:#444; line-height:1.6; margin-bottom:15px;">
+          A face recognition-based attendance system using OpenCV with SQLite/CSV storage.
+        </p>
+        <a href="https://github.com/Abhi110704" target="_blank" style="display:inline-flex; align-items:center; color:#3f51b5; text-decoration:none; font-weight:500; font-size:14px;">
+          <ion-icon name="logo-github" style="margin-right:6px;"></ion-icon> View on GitHub
+        </a>
+      </div>
 
-                  <p class="card-subtitle" style="color: #f5f5f5;">Cancer Detection</p>
+      <!-- Resume Skill Extractor -->
+      <div class="project-card" style="border:1px solid #ddd; border-radius:14px; padding:25px; text-align:left; background:#fff; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:12px;">Resume Skill Extractor – NLP Parser</h3>
+        <p style="font-size:15px; color:#444; line-height:1.6; margin-bottom:15px;">
+          An NLP-based resume parser with integrated APIs to extract and score candidate skills.
+        </p>
+        <a href="https://github.com/Abhi110704" target="_blank" style="display:inline-flex; align-items:center; color:#3f51b5; text-decoration:none; font-weight:500; font-size:14px;">
+          <ion-icon name="logo-github" style="margin-right:6px;"></ion-icon> View on GitHub
+        </a>
+      </div>
 
-                  <h3 class="h3 card-title" style="color: #f5f5f5;">ML Model for Cancer Predication and Detection</h3>
+      <!-- HAL Parts Defect Detection -->
+      <div class="project-card" style="border:1px solid #ddd; border-radius:14px; padding:25px; text-align:left; background:#fff; transition:0.3s; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <h3 style="font-size:20px; font-weight:600; margin-bottom:12px;">HAL Parts Defect Detection System</h3>
+        <p style="font-size:15px; color:#444; line-height:1.6; margin-bottom:15px;">
+          A defect detection system for Hindustan Aeronautics Limited using Computer Vision and Deep Learning to identify faulty aircraft components in real-time.
+        </p>
+        <a href="https://github.com/Abhi110704" target="_blank" style="display:inline-flex; align-items:center; color:#3f51b5; text-decoration:none; font-weight:500; font-size:14px;">
+          <ion-icon name="logo-github" style="margin-right:6px;"></ion-icon> View on GitHub
+        </a>
+      </div>
 
-                  <span class="btn-link" style="color: #f5f5f5;">
-                    <span>View Project</span>
+    </div>
 
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
+    <!-- More Projects Button -->
+    <div style="margin-top:40px; text-align:center;">
+      <a href="https://github.com/Abhi110704" target="_blank" 
+         style="display:inline-block; background:#3f51b5; color:#fff; padding:12px 24px; border-radius:8px; text-decoration:none; font-weight:600; font-size:15px; transition:0.3s;">
+        🔗 See More Projects on GitHub
+      </a>
+    </div>
 
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://github.com/Abhi110704/Internship/tree/main/Stock_Prediction_Project" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')" target="_blank">
-                <div class="card-content">
-
-                  <p class="card-subtitle" style="color: #f5f5f5;">Stock Market</p>
-
-                  <h3 class="h3 card-title" style="color: #f5f5f5;">Stock Market Prediction using ML</h3>
-
-                  <span class="btn-link" style="color: #f5f5f5;">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://github.com/Abhi110704/Internship/tree/main/Face%20Recognition%20Model" class="portfolio-card" style="background-image: url('./assets/images/portfolio-3.jpg')" target="_blank">
-                <div class="card-content">
-
-                  <p class="card-subtitle" style="color: #f5f5f5;">Face Recognition</p>
-
-                  <h3 class="h3 card-title" style="color: #f5f5f5;">Face Recognition using ML</h3>
-
-                  <span class="btn-link" style="color: #f5f5f5;">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
-                </div>
-              </a>
-            </li>
-
-            <li>
-              <a href="https://github.com/Abhi110704/Internship/tree/main/Mini%20Project" class="portfolio-card" style="background-image: url('./assets/images/portfolio-4.jpg')" target="_blank">
-                <div class="card-content">
-
-                  <p class="card-subtitle" style="color: #f5f5f5;">Movie Recommendation</p>
-
-                  <h3 class="h3 card-title" style="color: #f5f5f5;">Movie Recommendation using Web Development</h3>
-
-                  <span class="btn-link" style="color: #f5f5f5;">
-                    <span>View Project</span>
-
-                    <ion-icon name="arrow-forward"></ion-icon>
-                  </span>
-
-                </div>
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
+  </div>
+</section>
 
 
       <!-- 
@@ -1591,12 +1733,7 @@ I <!DOCTYPE html>
             <h2 class="h2 section-title">I Develop Application that Help People</h2>
 
             <p class="section-text">
-              I am an enthusiastic and highly motivated individual passionate about Artificial Intelligence (AI) and Machine
-              Learning (ML). I am particularly interested in applying data science, deep learning, and automation techniques
-              to solve complex real-world problems across various industries. My goal is to contribute to groundbreaking
-              projects that leverage AI and ML to create impactful solutions while constantly enhancing my technical skills
-              and knowledge through collaborative work in dynamic environments. I am eager to collaborate with talented
-              teams that are working on cutting-edge technologies and innovations.
+              Final-year B.Tech student with expertise in full-stack development, AI/ML, and cloud platforms. Built scalable apps using Django, React, and GCP. Experienced with YOLOv8, LSTM, REST APIs, and PostgreSQL. Passionate about creating innovative solutions that solve real-world problems through cutting-edge technologies.
             </p>
 
             <div class="btn-group">
@@ -1606,6 +1743,181 @@ I <!DOCTYPE html>
 
           </div>
 
+        </div>
+      </section>
+
+
+      <!-- 
+        - #EDUCATION
+      -->
+
+      <section class="section education" id="education">
+        <div class="container">
+          <p class="section-subtitle">Education</p>
+
+          <h2 class="h2 section-title">Academic Background</h2>
+
+          <p class="section-text">
+            My educational journey in Computer Science and Engineering with focus on AI & ML.
+          </p>
+
+          <div class="education-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 2rem 0;">
+            <div class="education-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="education-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="education-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="school-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="education-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">B.Tech CSE (AI & ML)</h3>
+                  <p class="education-institution" style="color: var(--accent-color); font-weight: 500;">JSS Academy of Technical Education, Noida</p>
+                </div>
+              </div>
+              <div class="education-details">
+                <p class="education-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> November 2022 – August 2026</p>
+                <p class="education-cgpa" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>CGPA:</strong> 7.96</p>
+                <p class="education-description" style="color: var(--text-secondary); line-height: 1.6;">
+                  Specialized in Artificial Intelligence and Machine Learning with focus on deep learning, computer vision, and data science applications.
+                </p>
+              </div>
+            </div>
+
+            <div class="education-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="education-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="education-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="library-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="education-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">12th Grade (CBSE)</h3>
+                  <p class="education-institution" style="color: var(--accent-color); font-weight: 500;">YMCA,<br>Prayagraj</p>
+                </div>
+              </div>
+              <div class="education-details">
+                <p class="education-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> 2021 – 2022</p>
+                <p class="education-description" style="color: var(--text-secondary); line-height: 1.6;">
+                  Completed higher secondary education with focus on Science stream including Mathematics, Physics, and Computer Science.
+                </p>
+              </div>
+            </div>
+
+            <div class="education-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="education-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="education-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="book-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="education-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">10th Grade (CBSE)</h3>
+                  <p class="education-institution" style="color: var(--accent-color); font-weight: 500;">Ramanujan Public School,<br>Prayagraj</p>
+                </div>
+              </div>
+              <div class="education-details">
+                <p class="education-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> 2019 – 2020</p>
+                <p class="education-description" style="color: var(--text-secondary); line-height: 1.6;">
+                  Completed secondary education with strong foundation in core subjects and extracurricular activities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 
+        - #EXPERIENCE
+      -->
+
+      <section class="section experience" id="experience">
+        <div class="container">
+          <p class="section-subtitle">Experience</p>
+
+          <h2 class="h2 section-title">Professional Experience</h2>
+
+          <p class="section-text">
+            My professional journey in software development, AI/ML, and cloud technologies.
+          </p>
+
+          <div class="experience-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; padding: 2rem 0;">
+            <div class="experience-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="experience-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="experience-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="code-slash-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="experience-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">Full Stack Developer & AI/ML Intern</h3>
+                  <p class="experience-company" style="color: var(--accent-color); font-weight: 500;">Bluestock Technologies</p>
+                </div>
+              </div>
+              <div class="experience-details">
+                <p class="experience-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> June – July 2025</p>
+                <ul class="experience-achievements" style="color: var(--text-secondary); line-height: 1.6; padding-left: 1.5rem;">
+                  <li>Built REST APIs + React dashboards</li>
+                  <li>Designed PostgreSQL models</li>
+                  <li>Improved classifier accuracy by 18% using SMOTE + scaling</li>
+                  <li>Machine learning model development and optimization</li>
+                  <li>Data preprocessing and feature engineering</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="experience-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="experience-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="eye-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="experience-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">Computer Vision Engineer</h3>
+                  <p class="experience-company" style="color: var(--accent-color); font-weight: 500;">HAL TAD Kanpur</p>
+                </div>
+              </div>
+              <div class="experience-details">
+                <p class="experience-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> June – July 2025</p>
+                <ul class="experience-achievements" style="color: var(--text-secondary); line-height: 1.6; padding-left: 1.5rem;">
+                  <li>YOLOv8 defect detection (40% better accuracy)</li>
+                  <li>Built Streamlit interface (60% faster reviews)</li>
+                  <li>Implemented computer vision solutions for quality control</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="experience-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="experience-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="cloud-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="experience-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">Cloud Engineer</h3>
+                  <p class="experience-company" style="color: var(--accent-color); font-weight: 500;">Google Cloud Arcade</p>
+                </div>
+              </div>
+              <div class="experience-details">
+                <p class="experience-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> April – June 2025</p>
+                <ul class="experience-achievements" style="color: var(--text-secondary); line-height: 1.6; padding-left: 1.5rem;">
+                  <li>Earned 70+ GCP badges</li>
+                  <li>Automated IAM logic (50% faster setup)</li>
+                  <li>Gained expertise in cloud infrastructure and services</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="experience-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease;">
+              <div class="experience-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="experience-icon" style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                  <ion-icon name="analytics-outline" style="font-size: 2rem; color: var(--white);"></ion-icon>
+                </div>
+                <div>
+                  <h3 class="experience-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 0.5rem;">ML Intern</h3>
+                  <p class="experience-company" style="color: var(--accent-color); font-weight: 500;">Acmegrade</p>
+                </div>
+              </div>
+              <div class="experience-details">
+                <p class="experience-period" style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Duration:</strong> April – June 2024</p>
+                <ul class="experience-achievements" style="color: var(--text-secondary); line-height: 1.6; padding-left: 1.5rem;">
+                  <li>Improved classifier accuracy by 18% using SMOTE + scaling</li>
+                  <li>Machine learning model development and optimization</li>
+                  <li>Data preprocessing and feature engineering</li>
+                </ul>
+              </div>
+            </div>             
+          </div>
         </div>
       </section>
 
@@ -1626,58 +1938,114 @@ I <!DOCTYPE html>
 
           <div class="certificates-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem 0;">
             <div class="certificate-card">
-              <h3 class="certificate-title">Python Programming</h3>
-              <p class="certificate-issuer">IIT Madras</p>
-              <a href="./Certificate/Python IIT-M.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">Deloitte Data Analytics</h3>
+              <p class="certificate-issuer">Deloitte Australia (2025)</p>
+              <a href="./Certificate/Deloitte.pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">Machine Learning</h3>
-              <p class="certificate-issuer">IIT Roorkee</p>
-              <a href="./Certificate/IIT-Roorkee AIML.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">Google Cloud Arcade</h3>
+              <p class="certificate-issuer">70+ GCP Badges (2025)</p>
+              <a href="./Certificate/Gen AI Google.jpg" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
             
             <div class="certificate-card">
-              <h3 class="certificate-title">Java Programming</h3>
-              <p class="certificate-issuer">Coding Ninjas</p>
-              <a href="./Certificate/JAVA Certificate.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">Deep Learning</h3>
+              <p class="certificate-issuer">NIT Rourkela (2024)</p>
+              <a href="./Certificate/NIT Rourkela Deep Learning.pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">Stock Market AI</h3>
-              <p class="certificate-issuer">Internship</p>
-              <a href="./Certificate/Abhiyanshu Anand - Stock Market Using AI - Certificate.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">AI & ML Workshop</h3>
+              <p class="certificate-issuer">IIT Roorkee/Delhi (2024)</p>
+              <a href="./Certificate/IIT-Roorkee AIML.pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">Ethical Hacking</h3>
-              <p class="certificate-issuer">Internship</p>
-              <a href="./Certificate/Ethical Hacking Certificate Abhiyanshu Anand (2200911530008).pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">NLP & Ethical Hacking</h3>
+              <p class="certificate-issuer">Infosys (2023)</p>
+              <a href="./Certificate/Ethical Hacking Certificate Abhiyanshu Anand (2200911530008).pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">Python Programming</h3>
-              <p class="certificate-issuer">IIT Bombay</p>
-              <a href="./Certificate/Python IIT-B.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">B.Sc Foundation</h3>
+              <p class="certificate-issuer">IIT Madras (2024)</p>
+              <a href="./Certificate/IIT Madras BS Degree Foundation Level.pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">Machine Learning Internship</h3>
-              <p class="certificate-issuer">Internship</p>
-              <a href="./Certificate/Internship ML.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">DSA & Problem Solving</h3>
+              <p class="certificate-issuer">Coding Ninjas (2024)</p>
+              <a href="./Certificate/Coding Ninja Certificate.pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">BS Degree Foundation</h3>
-              <p class="certificate-issuer">IIT Madras</p>
-              <a href="./Certificate/IIT Madras BS Degree Foundation Level.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">LeetCode 50-Day Challenge</h3>
+              <p class="certificate-issuer">LeetCode (2024)</p>
+              <a href="./Certificate/Leetcode 50 Days.png" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
 
             <div class="certificate-card">
-              <h3 class="certificate-title">Nestle Internship</h3>
-              <p class="certificate-issuer">Nestle</p>
-              <a href="./Certificate/Nestle.pdf" class="btn btn-primary blue" target="_blank">Download Certificate</a>
+              <h3 class="certificate-title">AI in Stock Market</h3>
+              <p class="certificate-issuer">Internship (2024)</p>
+              <a href="./Certificate/Abhiyanshu Anand - Stock Market Using AI - Certificate.pdf" class="btn btn-primary blue" target="_blank">View Certificate</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 
+        - #ACHIEVEMENTS
+      -->
+
+      <section class="section achievements" id="achievements">
+        <div class="container">
+          <p class="section-subtitle">Achievements</p>
+
+          <h2 class="h2 section-title">Academic & Professional Achievements</h2>
+
+          <p class="section-text">
+            Recognition of my academic excellence and professional accomplishments.
+          </p>
+
+          <div class="achievements-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 2rem 0;">
+            <div class="achievement-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; text-align: center;">
+              <div class="achievement-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #1a365d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <ion-icon name="trophy-outline" style="font-size: 2.5rem; color: var(--white);"></ion-icon>
+              </div>
+              <h3 class="achievement-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 1rem;">GATE 2025 Qualified</h3>
+              <p class="achievement-details" style="color: var(--text-secondary); line-height: 1.6;">
+                <strong>Data Science & AI</strong><br>
+                All India Rank: 9229<br>
+                Successfully qualified in one of India's most competitive entrance exams
+              </p>
+            </div>
+
+            <div class="achievement-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; text-align: center;">
+              <div class="achievement-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #1a365d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <ion-icon name="school-outline" style="font-size: 2.5rem; color: var(--white);"></ion-icon>
+              </div>
+              <h3 class="achievement-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 1rem;">NTSE Stage 1</h3>
+              <p class="achievement-details" style="color: var(--text-secondary); line-height: 1.6;">
+                <strong>National Talent Search Examination</strong><br>
+                Year: 2020<br>
+                Qualified in the prestigious NTSE scholarship program
+              </p>
+            </div>
+
+            <div class="achievement-card" style="background: var(--white); border: 1px solid var(--medium-blue); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease; text-align: center;">
+              <div class="achievement-icon" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--accent-color), #1a365d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                <ion-icon name="calculator-outline" style="font-size: 2.5rem; color: var(--white);"></ion-icon>
+              </div>
+              <h3 class="achievement-title" style="color: var(--dark-bg); font-weight: 600; margin-bottom: 1rem;">KVPY/PRMO</h3>
+              <p class="achievement-details" style="color: var(--text-secondary); line-height: 1.6;">
+                <strong>Kishore Vaigyanik Protsahan Yojana</strong><br>
+                Year: 2020<br>
+                Pre-Regional Mathematical Olympiad qualification
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
@@ -1855,84 +2223,7 @@ I <!DOCTYPE html>
     });
   </script>
 
-  <!-- 
-    - Skills Charts
-  -->
-  <script>
-    // AI/ML Score Chart
-    const aiMlCtx = document.getElementById('aiMlChart').getContext('2d');
-    new Chart(aiMlCtx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Machine Learning', 'Deep Learning', 'Data Science'],
-        datasets: [{
-          data: [75, 75, 70],
-          backgroundColor: ['#4CAF50', '#2196F3', '#FFC107'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              color: '#000000',
-              font: {
-                size: 14
-              }
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                return `${context.label}: ${context.raw}%`;
-              }
-            }
-          }
-        },
-        cutout: '70%'
-      }
-    });
 
-    // Programming Score Chart
-    const programmingCtx = document.getElementById('programmingChart').getContext('2d');
-    new Chart(programmingCtx, {
-      type: 'doughnut',
-      data: {
-        labels: ['Python', 'Java', 'MySQL'],
-        datasets: [{
-          data: [80, 70, 75],
-          backgroundColor: ['#4CAF50', '#2196F3', '#FFC107'],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              color: '#000000',
-              font: {
-                size: 14
-              }
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                return `${context.label}: ${context.raw}%`;
-              }
-            }
-          }
-        },
-        cutout: '70%'
-      }
-    });
-  </script>
 
 </body>
 
