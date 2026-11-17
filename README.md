@@ -46,15 +46,11 @@ Then visit `http://localhost:8000`.
 ├── index.html                 # Portfolio landing page
 ├── resume.html                # Print-ready resume
 ├── assets/
-│   ├── css/
-│   │   ├── portfolio.css      # Responsive portfolio and portrait styling
-│   │   └── style.css          # Original site stylesheet
-│   └── images/
-│       └── Pic.jpg            # Profile photograph used in the hero
+│   └── css/
+│       ├── portfolio.css      # Responsive portfolio styles
+│       └── style.css          # Original site stylesheet
 └── README.md
 ```
-
-The hero portrait uses a responsive circular crop with subtle 3D tilt and floating effects. Pointer tilt is limited to fine-pointer devices, and animations respect reduced-motion preferences.
 
 ## Contact
 
