@@ -1,72 +1,67 @@
-# 🚀 Abhiyanshu Anand - Portfolio
+# Abhiyanshu Anand — AI/ML & Software Engineering Portfolio
 
-Welcome to my personal portfolio website! I am Abhiyanshu Anand, a Software Developer and AI/ML Engineer passionate about creating innovative solutions using cutting-edge technologies in AI/ML and software development.
+Personal portfolio for **Abhiyanshu Anand**, an AI/ML-focused software developer and M.Tech student in Computer Science and Engineering at IIIT-Delhi.
 
-## 🔗 Live Demo
+## Live site
 
-[Visit Portfolio →](https://abhi110704.github.io/)  
-*(This is my actual deployed site URL)*
+[Visit the portfolio](https://abhi110704.github.io/) · [View the resume](https://abhi110704.github.io/resume.html)
 
----
+## About
 
-## 👨‍💻 About Me
+The portfolio highlights experience in applied machine learning, computer vision, full-stack development, data analytics, and cloud technologies. It brings together selected projects, technical skills, professional experience, education, achievements, certifications, and contact links.
 
-I am an enthusiastic and highly motivated individual passionate about Artificial Intelligence (AI) and Machine Learning (ML). I am particularly interested in applying data science, deep learning, and automation techniques to solve complex real-world problems across various industries. My goal is to contribute to groundbreaking projects that leverage AI and ML to create impactful solutions while constantly enhancing my technical skills and knowledge through collaborative work in dynamic environments.
+## Featured projects
 
----
+- **HAL Parts Defect Detection** — YOLOv8 defect-detection tool and Streamlit interface for image analysis.
+- **NUDRRS** — Django and React emergency-management platform with real-time reporting and AI-assisted incident verification.
+- **Stock Predictor** — LSTM-based stock prediction using RSI and MACD indicators.
+- **Face Attendance** — OpenCV facial-recognition attendance system with SQLite and CSV attendance management.
+- **Resume Skill Extractor** — NLP resume parser for skill extraction and automated skill scoring.
+- **Uninsured Vehicle Identification** — Python data integration using CSVAdapter and SchemaMapper for heterogeneous vehicle datasets.
 
-## ✨ Skills
+## Technical skills
 
-- **Programming:** Python, Java, HTML5
-- **AI/ML:** Machine Learning, Deep Learning, Data Science
+**Languages:** Python, C++, SQL, JavaScript, HTML, CSS, TypeScript  
+**Frameworks:** Django, React.js, Node.js, Flask, Streamlit  
+**Libraries:** TensorFlow, OpenCV, Pandas, Scikit-learn, YOLOv8  
+**Tools and platforms:** Git, GitHub, CMake, Docker, Google Cloud Platform, VS Code, Jupyter, Postman  
+**Databases:** MySQL, PostgreSQL, SQLite
 
----
+## Run locally
 
-## 🏆 Certifications
+This is a static website with no build step. Clone the repository and open `index.html` in a browser, or serve the project directory locally:
 
-- Python Programming – IIT Madras
-- Machine Learning – IIT Roorkee
-- Java Programming – Coding Ninjas
-- Stock Market AI – Internship
-- Ethical Hacking – Internship
-- Python Programming – IIT Bombay
-- Machine Learning Internship – Internship
-- BS Degree Foundation – IIT Madras
-- Nestle Internship – Nestle
-- Deloitte Australia - Data Analytics Job Simulation
-- Tata Group - Cybersecurity Analyst Job Simulation
-- JPMORGAN CHASE & CO. - Software Engineering Job Simulation
-
----
-
-## 💡 Projects
-
-- **Cancer Detection ML Model:** Cancer Prediction and Detection using ML
-- **Stock Market Prediction:** Stock Market Prediction using ML
-- **Face Recognition:** Face Recognition using ML
-- **Movie Recommendation:** Movie Recommendation using Web Development
-
----
-
-## 📫 Contact
-
-- **Address:** Noida, Uttar Pradesh, India
-- **Email:** abhiyanshu1107@gmail.com
-- **Phone:** +91 8318518911
-
----
-
-## 📁 Project Structure
-
-```
-📦 portfolio/
-├── index.html         # Main HTML file
-├── style-guide.md     # Style guide with variables and reusable styles
-└── favicon.svg        # Custom favicon for branding
+```bash
+git clone https://github.com/Abhi110704/Abhi110704.github.io.git
+cd Abhi110704.github.io
+python -m http.server 8000
 ```
 
+Then visit `http://localhost:8000`.
+
+## Repository structure
+
+```text
+.
+├── index.html                 # Portfolio landing page
+├── resume.html                # Print-ready resume
+├── assets/
+│   ├── css/
+│   │   ├── portfolio.css      # Responsive portfolio and portrait styling
+│   │   └── style.css          # Original site stylesheet
+│   └── images/
+│       └── Pic.jpg            # Profile photograph used in the hero
+└── README.md
+```
+
+The hero portrait uses a responsive circular crop with subtle 3D tilt and floating effects. Pointer tilt is limited to fine-pointer devices, and animations respect reduced-motion preferences.
+
+## Contact
+
+- Email: [abhiyanshu1107@gmail.com](mailto:abhiyanshu1107@gmail.com)
+- LinkedIn: [Abhiyanshu Anand](https://www.linkedin.com/in/abhiyanshu-anand-617963281)
+- GitHub: [Abhi110704](https://github.com/Abhi110704)
+
 ---
 
-## 📜 License
-
-This project is open source and available under the [MIT License](LICENSE).
+© Abhiyanshu Anand
